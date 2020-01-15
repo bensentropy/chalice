@@ -1496,8 +1496,6 @@ class WebsocketEvent(BaseLambdaEvent):
 class SNSEvent(BaseLambdaEvent):
     def _extract_attributes(self, event_dict):
         first_record = event_dict['Records'][0]
-        self.message = first_record['Sns']['Message']
-        self.subject = first_record['Sns']['Subject']
 
 
 class S3Event(BaseLambdaEvent):
